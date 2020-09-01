@@ -3,6 +3,8 @@ const express = require('express');
 const app = express(); 
 const port = process.env.PORT || 1238;
 
+const { getAllBoats } = require('./database.js');
+
 
 //Middlewares - function that executes when routes are being hit, ex "/" - can be useful for authentification
 
@@ -15,14 +17,15 @@ app.get('/', (req, res) => {
 	res.send('We are on home');
 })
 
-app.get('/posts', (req, res) => {
-	res.send('We are on posts');
-})
+// app.get('/posts', (req, res) => {
+// 	res.send('We are on posts');
+// })
 
-// GET /api/hats
+// GET /api/boats
 app.get('/api/boats', (req, res) => {
-	console.log("GET api/hats");
-	// res.send({ modellnamn: "Daygruiser"})
+	console.log("GET /api/boats"); //skrivs ut i term
+	let data = getAllBoats();
+	res.send(data);
 })
 
 //How do we start listening to the server 
