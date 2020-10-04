@@ -2,6 +2,7 @@
 const express = require('express'); 
 const app = express(); 
 const port = process.env.PORT || 1337;
+const path = require('path')
 const bodyParser = require('body-parser');
 const { getAllBoats, getBoat, addBoat, deleteBoat, search, getOnlyFive } = require('./database.js');
 
