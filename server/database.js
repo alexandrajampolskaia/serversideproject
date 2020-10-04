@@ -84,30 +84,6 @@ function deleteBoat(id, callback) {
   });
 }
 
-// function searchBoat(filter, callback) {
-
-//   MongoClient.connect(
-//     url,
-//     { useUnifiedTopology: true },
-//     async (error, client) => {
-//       if (error) {
-//         callback("Connection ERROR!");
-//         return;
-//       }
-//       const col = client.db(dbName).collection(collectionName);
-//       try {
-//         const cursor = await col.find(filter);
-//         const array = await cursor.toArray();
-//         callback(array);
-//       } catch (error) {
-// 		callback("Query ERROR");
-// 		console.log(error.response)
-//       } finally {
-//         client.close();
-//       }
-//     }
-//   );
-// }
 
 function search(query, callback) {
 	const filter = {};
@@ -151,13 +127,11 @@ function search(query, callback) {
 			} finally {
 				client.close();
 			}
-		}// connect callback - async
-	)//connect - async
+		}
+	)
 }
 
-function getGroup(filter, callback) {
-
-	// filter = [ {$sort: {pris : 1} },{ $limit: 5 } ];
+function getMany(filter, callback) {
 
     MongoClient.connect( url, { useUnifiedTopology : true }, async (error, client)=>{ 
         if(error){
@@ -222,7 +196,7 @@ function getOnlyFive(sort, callback) {
 
 		
   }
-  getGroup(filter, callback);
+  getMany(filter, callback);
 }
 
 
