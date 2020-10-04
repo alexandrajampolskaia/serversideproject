@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const { getAllBoats, getBoat, addBoat, deleteBoat, search, getOnlyFive } = require('./database.js');
 
 //MIDDLEWARE
-app.use(express.static(__dirname, '/../build'));
+app.use(express.static(path.join(__dirname, '../build')));
 
 app.use((req, res, next) => {
 	console.log(`${req.method} ${req.url}`);
