@@ -40,6 +40,8 @@ function get(filter, callback) {
 function addBoat(requestBody, callback) {
   console.log("inside AddBoat ");
   const doc = requestBody;
+  doc.pris = parseInt(doc.pris)
+	doc.tillverkningsår = parseInt(doc.tillverkningsår)
   MongoClient.connect(
     url,
     { useUnifiedTopology: true },
