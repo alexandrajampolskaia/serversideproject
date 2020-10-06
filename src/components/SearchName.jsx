@@ -22,7 +22,7 @@ export default function SearchName() {
 	if (getAllBoats === null ){
 		console.log("Empty");
 	} return (
-		<p key={boat.modellnamn+index}>{boat.modellnamn} - ({boat.tillverkningsår}) - {boat.pris} - Segel: {boat.segelbåt} - Motor: {boat.motor} </p>
+		<p key={boat.modellnamn+index}>{boat.modellnamn} - ({boat.tillverkningsår}) - Pris: {boat.pris} - Segel: {boat.segelbåt} - Motor: {boat.motor} </p>
 	)	
 	})
 
